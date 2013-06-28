@@ -1,7 +1,6 @@
 'use strict'
 @app = angular.module('app', ['ui.state', 'directives'])
 
-
 app.config ($stateProvider, $locationProvider) ->
   main =
     name: "main"
