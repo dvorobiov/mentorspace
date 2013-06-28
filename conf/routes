@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                         controllers.WaterfallController.index
+
+
+# waterfall for testing
+GET     /waterfall/list           controllers.WaterfallController.list
+GET     /waterfall/new            controllers.WaterfallController.add
+POST    /waterfall                controllers.WaterfallController.create
+GET     /waterfall/:id            controllers.WaterfallController.show(id: Int)
+GET     /waterfall/:id/edit       controllers.WaterfallController.edit(id: Int)
+PUT     /waterfall/:id            controllers.WaterfallController.update(id: Int)
+DELETE  /waterfall/:id            controllers.WaterfallController.destroy(id: Int)
+
+
+
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file             controllers.Assets.at(path="/public", file)

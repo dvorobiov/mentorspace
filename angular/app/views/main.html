@@ -1,0 +1,43 @@
+<div id="header">
+  <div class="header-inner container">
+    <div class="row-fluid">
+      <div class="span8">
+        <div class="logo">
+          <a class="" href="/" title="Home">Mentor<span>space</span></a>
+        </div>
+        <div class="slogan" ng-bind="text.mentorspace_slogan"></div>
+      </div>
+    </div>
+  </div>  
+  <div class="container navbar">
+    <div class="navbar-inner">
+        <div data-tabset>
+          <div data-home-tab />
+          <div data-tab text="Find a Mentor" route="/mentor/search" />
+          <div data-tab text="Become a Mentor" route="/mentor/self" />
+        </div>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li>
+              <a class="home-link" href="/"><i class="icon-home"></i></a>
+            </li>
+            <li>
+              <a href="/">Find a Mentor</a>
+            </li>
+            <li>
+              <a href="/">Become a Mentor</a>
+            </li>
+          </ul>
+          <ul class="nav pull-right">
+            <li>
+              <a href="/" class="btn">Sign Up</a>
+            </li>
+            <li class="dropdown"> 
+              <a href="login.htm" class="btn signup" id="login-drop" data-toggle="dropdown">Login</a>
+            </li>
+          </ul>
+      </div>  
+    </div>
+  </div>
+</div>
+<div id="content" ui-view></div>
