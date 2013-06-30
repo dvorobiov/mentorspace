@@ -7,11 +7,18 @@
   replace: true
   transclude: true
 
+  controller: () ->
+    tabs = []
+    @addTab = (tab) -> 
+      tabs.push tab
+
 @dirModule.directive 'homeTab', ->
   restrict: 'A'
   require: '^tabset'
-  template: '<li><a class="home-link" href="/"><i class="icon-home"></i></a></li>'
+  template: '<li><a class="home-link" href="/#"><i class="icon-home"></i></a></li>'
   replace: true
+  link: (scope, elem, attrs, tabSetCtrl) ->
+    tabSetCtrl.addTab scope  
 
 @dirModule.directive 'tab', ->
   restrict: 'A'
@@ -19,6 +26,8 @@
   scope:
     route: '@route'
     text: '@text'
-  template: '<li><a href="{{route}}">{{text}}</a></li>'
+  template: '<li><a href="{{route}}" ng-bind="text"></a></li>'
   replace: true
+  link: (scope, elem, attrs, tabSetCtrl) ->
+    tabSetCtrl.addTab scope
 

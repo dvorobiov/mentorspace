@@ -4,8 +4,6 @@
 app.config ($stateProvider, $locationProvider) ->
   main =
     name: "main"
-    url: "/"
-    abstract: true
     templateUrl: "/views/main.html"
     controller: "MainCtrl"
 
@@ -16,8 +14,26 @@ app.config ($stateProvider, $locationProvider) ->
     templateUrl: "/views/index.html"
     controller: "IndexCtrl"
 
+  main_mentor_find =
+    name: "main.mentor.find"
+    parent: main
+    url: "/mentor/find"
+    templateUrl: "/views/findMentor.html"
+    controller: "FindMentorCtrl"
 
-  $stateProvider.state(main).state(main_index)
+  main_mentor_new =
+    name: "main.mentor.new"
+    parent: main
+    url: "/mentor/new"
+    templateUrl: "/views/newMentor.html"
+    controller: "NewMentorCtrl"
+
+
+  $stateProvider
+    .state(main)
+    .state(main_index)
+    .state(main_mentor_find)
+    .state(main_mentor_new)
         
-  $locationProvider.html5Mode true      
+  # $locationProvider.html5Mode true      
 
